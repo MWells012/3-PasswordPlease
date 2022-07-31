@@ -12,7 +12,7 @@ function writePassword() {
 // Add event listener to generate button -> button click
 generateBtn.addEventListener("click", writePassword);
 //the function
-function writePassword() {
+function generatePassword() {
     var passwordChars = "";
     var passwordLength = 0;
     //var OptionLowerCase = false, OptionUpperCase = false, OptionNumeric = false, OptionSpecialCharacters = false;
