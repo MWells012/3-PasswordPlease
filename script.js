@@ -1,6 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+var generatedPassword = "";
+    var lowerCaseSet = "abcdefghijklmnopqrstuvwxyz";
+    var upperCaseSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var numbersSet = "0123456789";
+    var specialCharsSet = "!@#$%&*";
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -15,7 +22,6 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
     var passwordChars = "";
     var passwordLength = 0;
-    //var OptionLowerCase = false, OptionUpperCase = false, OptionNumeric = false, OptionSpecialCharacters = false;
     passwordLength = prompt("Please enter the length you would like your password, must be between 8 and 128");
 
     // verify password length
@@ -25,7 +31,7 @@ function generatePassword() {
       OptionNumeric = confirm("Do you want numbers?");
       OptionSpecialCharacters = confirm("Do you want special characters? (!@#$%&?)");
 
-    // verify at least one char type
+    // verify at least one char type - these are the pOptions
     if (OptionLowerCase || OptionUpperCase || OptionNumeric || OptionSpecialCharacters) {
       return passwordChars = createPassword(passwordLength, [OptionLowerCase, OptionUpperCase, OptionNumeric, OptionSpecialCharacters]);
     }
@@ -38,38 +44,19 @@ else {
 }
 }
 
-function createPassword(pLength, pOptions) {
-    var generatedPassword = "";
-    const lowerCaseSet = "abcdefghijklmnopqrstuvwxyz";
-    const upperCaseSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const numbersSet = "0123456789";
-    const specialCharsSet = "~`!@#$%^&*()_-+={[}]|:;<,>./?";
+function createPassword(pLength) {
 
     for (var i = 0; i < pLength; i++) {
-        // choose what type of char you'll generate
-        var randomSet;
-
-        // make sure it puts out a valid character accords to specs
-        do {
-            randomSet = Math.floor(Math.random() * pOptions.length);
-        } while (!pOptions[randomSet]);
-
-        // generate a char based on the type randomly chosen
-        switch (randomSet) {
-            case 0: // lowercase
-                generatedPassword += lowerCaseSet[Math.floor(Math.random() * lowerCaseSet.length)];
-                break;
-            case 1: // uppercase
-                generatedPassword += upperCaseSet[Math.floor(Math.random() * upperCaseSet.length)];
-                break;
-            case 2: // numeric
-                generatedPassword += numbersSet[Math.floor(Math.random() * numbersSet.length)];
-                break;
-            case 3: // special
-                generatedPassword += specialCharsSet[Math.floor(Math.random() * specialCharsSet.length)];
-                break;
+  
+          if(generatedPassword += lowerCaseSet[Math.floor(Math.random() * lowerCaseSet.length)]);
+          if (generatedPassword += upperCaseSet[Math.floor(Math.random() * upperCaseSet.length)]);
+          if (generatedPassword += numbersSet[Math.floor(Math.random() * numbersSet.length)]);
+          if (generatedPassword += specialCharsSet[Math.floor(Math.random() * specialCharsSet.length)]);
         }
-    }
+    
     return generatedPassword;
 }
+
+
+
 
