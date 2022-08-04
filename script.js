@@ -2,6 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 
 var generatedPassword = "";
+var charSet = "";
     var lowerCaseSet = "abcdefghijklmnopqrstuvwxyz";
     var upperCaseSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var numbersSet = "0123456789";
@@ -18,20 +19,21 @@ function writePassword() {
 
 // Add event listener to generate button -> button click
 generateBtn.addEventListener("click", writePassword);
-//the function
+
+//the function to generate
 function generatePassword() {
     var passwordChars = "";
     var passwordLength = 0;
     passwordLength = prompt("Please enter the length you would like your password, must be between 8 and 128");
 
-    // verify password length
+    // password length
     if (passwordLength >= 8 && passwordLength <= 128) {
       OptionLowerCase = confirm("Do you want lowercase letters?");
       OptionUpperCase = confirm("Do you want uppercase letters?");
       OptionNumeric = confirm("Do you want numbers?");
       OptionSpecialCharacters = confirm("Do you want special characters? (!@#$%&?)");
 
-    // verify at least one char type - these are the pOptions
+    // these are the passwordOptions
     if (OptionLowerCase || OptionUpperCase || OptionNumeric || OptionSpecialCharacters) {
       return passwordChars = createPassword(passwordLength, [OptionLowerCase, OptionUpperCase, OptionNumeric, OptionSpecialCharacters]);
     }
@@ -44,19 +46,25 @@ else {
 }
 }
 
-function createPassword(pLength) {
+function createPassword(passwordLength) {
 
-    for (var i = 0; i < pLength; i++) {
+    for (var i = 0; i < passwordLength; i++) {
   
-          if(generatedPassword += lowerCaseSet[Math.floor(Math.random() * lowerCaseSet.length)]);
-          if (generatedPassword += upperCaseSet[Math.floor(Math.random() * upperCaseSet.length)]);
-          if (generatedPassword += numbersSet[Math.floor(Math.random() * numbersSet.length)]);
-          if (generatedPassword += specialCharsSet[Math.floor(Math.random() * specialCharsSet.length)]);
-        }
+      if(OptionLowerCase === true){
+        charSet += lowerCaseSet;
+      }
+      if(OptionUpperCase === true){
+        charSet += upperCaseSet;
+      }
+      if(OptionNumeric === true){
+        charSet += numbersSet;
+      }
+      if(OptionSpecialCharacters === true){
+        charSet += specialCharsSet;
+      }
+      var randomNumber = Math.floor(Math.random() * charSet.length)    
+      generatedPassword += charSet[Math.floor(Math.random() * randomNumber.length)];
     
     return generatedPassword;
 }
-
-
-
-
+}
