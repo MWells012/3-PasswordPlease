@@ -33,7 +33,7 @@ function generatePassword() {
       OptionNumeric = confirm("Do you want numbers?");
       OptionSpecialCharacters = confirm("Do you want special characters? (!@#$%&?)");
 
-    // these are the passwordOptions
+    // the options
     if (OptionLowerCase || OptionUpperCase || OptionNumeric || OptionSpecialCharacters) {
       return passwordChars = createPassword(passwordLength, [OptionLowerCase, OptionUpperCase, OptionNumeric, OptionSpecialCharacters]);
     }
@@ -62,7 +62,8 @@ function createPassword(passwordLength) {
       if(OptionSpecialCharacters === true){
         charSet += specialCharsSet;
       }
-          generatedPassword += charSet[Math.floor(Math.random() * lowerCaseSet.length)];
+          generatedPassword += charSet[Math.floor(Math.random() * (charSet.length))];
+          console.log(Math.floor(Math.random() * (charSet.length)))
     
     return generatedPassword;
 }
