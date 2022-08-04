@@ -62,8 +62,7 @@ function createPassword(passwordLength) {
       if(OptionSpecialCharacters === true){
         charSet += specialCharsSet;
       }
-      var randomNumber = Math.floor(Math.random() * charSet.length)    
-      generatedPassword += charSet[Math.floor(Math.random() * randomNumber.length)];
+      generatedPassword += charSet[Math.floor(Math.random() * lowerCaseSet.length)];
     
     return generatedPassword;
 }
