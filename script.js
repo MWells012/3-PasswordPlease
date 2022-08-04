@@ -44,9 +44,9 @@ function generatePassword() {
 else {
   alert("Invalid password length.");
 }
-}
 
-function createPassword(passwordLength) {
+
+function createPassword() {
 
     for (var i = 0; i < passwordLength; i++) {
   
@@ -65,9 +65,8 @@ function createPassword(passwordLength) {
           generatedPassword += charSet[Math.floor(Math.random() * (charSet.length))];
           console.log(Math.floor(Math.random() * (charSet.length)))
     
-    return generatedPassword;
+    //return generatedPassword;
+}
+return generatedPassword;
 }
 }
-
-
-
