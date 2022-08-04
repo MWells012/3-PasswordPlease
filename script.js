@@ -62,8 +62,11 @@ function createPassword(passwordLength) {
       if(OptionSpecialCharacters === true){
         charSet += specialCharsSet;
       }
-      generatedPassword += charSet[Math.floor(Math.random() * lowerCaseSet.length)];
+          generatedPassword += charSet[Math.floor(Math.random() * lowerCaseSet.length)];
     
     return generatedPassword;
 }
 }
+
+
+
