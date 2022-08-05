@@ -37,11 +37,13 @@ To generate a password there are a couple steps to take. When you press generate
 
 ## Learnings
 
-The goal of this assignment was to learn how to add code to a starter batch of code 
+This week our material was covering a wide number of things in side Javascript: Arrays, Iterations, Scopes, Methods, Objects and Primitive types, how they all work together and all the small details that go into the structure of this code and why it's important to pay attention to order.
+
+The goal of this assignment was to learn how to add code to a starter batch of code that was given to us. From there we had to use the material learned in the week to successfully get the generate button to actually respond when clicked. We learned how to have a system recognize when we ask it to add or omit a certain set of characters in a string. We learned that trial and error is very common and to test our written code often.
 
 ## Mock-Up
 
 link to deployed site: https://mwells012.github.io/3-PasswordPlease/ 
 
 The following image show the web application's appearance and functionality:
-[]
+[https://github.com/MWells012/3-PasswordPlease/blob/main/assets/photos/Screen%20Shot%202022-08-04%20at%2011.03.10%20PM.png]
